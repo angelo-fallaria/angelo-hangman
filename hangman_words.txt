@@ -1,0 +1,26 @@
+table
+chair
+spoon
+fork
+knife
+glass
+napkin
+fridge
+butter
+pasta
+rice
+bread
+peanut butter
+chicken
+pork
+beef
+basil
+oregano
+thyme
+parsley
+dill
+olive oil
+salt
+pepper
+chili
+hot sauce
