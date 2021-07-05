@@ -1,7 +1,8 @@
 #! python3
-#! hangman.py - Guess numbers before you get hanged!
+# hangman.py - Guess numbers before you get hanged!
 
-import random, sys
+import random
+import sys
 
 pics = ['''
   +---+
@@ -61,6 +62,7 @@ https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c
 # Get the list of words from hangman_words.txt from the same directory.
 hangman_words = open('.\\hangman_words.txt').readlines()
 
+
 def main_game():
     print('--HANGMAN--')
 
@@ -75,9 +77,9 @@ def main_game():
 
     # Letters that are not in the word
     wrong_guesses = []
-    
+
     while True:
-        
+
         # Print hangman
         print(pics[counter])
 
@@ -93,7 +95,7 @@ def main_game():
         # Print wrong guesses
         print(f"Misses: ", end='')
         print(*wrong_guesses, sep=', ')
-        
+
         # Check win condition
         if ''.join(solved) == word:
             print('You won!\n')
@@ -112,7 +114,7 @@ def main_game():
             # Player cannot input in already wrong guesses
             if letter in wrong_guesses:
                 continue
-            
+
             break
 
         # Check if letter is in word
@@ -122,21 +124,22 @@ def main_game():
             for i in range(len(word)):
                 if word[i] == letter:
                     solved[i] = word[i]
-                
+
         # If not, add to hangman counter
         else:
             counter += 1
             wrong_guesses.append(letter)
-            
+
 
 def __main__():
     while True:
         print("Wanna play hangman? Enter 'y'! ('q' to quit)")
         user_input = input('>> ')
-        
+
         if user_input.lower() == 'y':
             main_game()
         elif user_input.lower() == 'q':
             sys.exit()
+
 
 __main__()
